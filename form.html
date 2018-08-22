@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  my form
+</head>
+<body>
+<h1>
+  REGISTRATION FORM
+</h1>
+<form method="POST" action="{{url_for('form')}}">
+  {{form.csrf_token}}
+  {{form.Organisation_Name.label}}
+  {{form.Organisation_Name}}
+  <ul>
+    {% for error in form.Organisation_Name.errors %}
+    <li style="color:red;">{{error}}</li>
+    {%endfor%}
+  </ul>
+  {{form.name.label}}
+  {{form.name}}
+  <ul>
+    {% for error in form.name.errors %}
+      <li style="color:red;">{{error}}</li>
+    {% endfor %}
+  </ul>
+  {{form.Email.label}}
+  {{form.Email}}
+  <ul>
+    {% for error in form.Email.errors %}
+      <li style="color:red;">{{error}}</li>
+    {% endfor %}
+  </ul>
+  {{form.contact.label}}
+  {{form.contact}}
+  <ul>
+    {% for error in form.contact.errors %}
+      <li style="color:red;">{{error}}</li>
+    {% endfor %}
+  </ul>
+  {{form.group.label}}
+  {{form.group}}
+  <input type="submit" value="Submit">
+</form>
+</body>
+</html>
